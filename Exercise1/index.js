@@ -1,11 +1,11 @@
 import express from "express";
 import bodyParser from "body-parser";
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { type } from "os";
+import { dirname } from "path"; //import dirname from path module
+import { fileURLToPath } from "url"; //import fileURLToPath from url module
 
 const app = express();
 const port = 3000;
+//get the directory name of the current module
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -28,7 +28,10 @@ function findSummation(n) {
 
 //B) Function that capitalizes the first and last letter of each word in a string
 function uppercaseFirstandLast(str) {
-  const words = str.split(" "); //split string into words
+  const pattern = /[^a-zA-Z\s/g]/; //regex pattern for non-alphabetic, non-white space characters
+  let removedChars = str.match(pattern);
+  let newStr = str.replace(pattern, ""); //remove non-alphabetic characters
+  const words = newStr.split(" "); //split string into words
   for (let i = 0; i < words.length; i++) {
     let word = words[i];
     let firstLetter = word.charAt(0).toUpperCase(); //get first letter and capitalize
@@ -36,7 +39,11 @@ function uppercaseFirstandLast(str) {
     let middle = word.slice(1, word.length - 1); //get middle of word
     words[i] = firstLetter + middle + lastLetter; //concatenate first, middle and last letter
   }
-  return words.join(" "); //join words back to string
+  let result = words.join(" "); //join words back to string
+  if (removedChars) {
+    result += removedChars.join(""); //add removed characters back to string
+  }
+  return result; //join words back to string
 }
 
 //C) Function that returns the average and median of an array of numbers
@@ -69,7 +76,7 @@ function find4Digits(str) {
 //Route handling
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(__dirname + "/public/index.html");
 });
 
 app.post("/findsummation", (req, res) => {
