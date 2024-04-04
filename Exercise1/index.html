@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 1</title>
+  </head>
+  <body>
+    <h1>Exercise 1</h1>
+    <h2>Function A: findSummation</h2>
+    <form action="/findsummation" method="POST">
+      <label for="int">Enter a positive integer</label>
+      <input type="text" id="integer" name="integer" required />
+      <button type="submit" onclick="findSummation()">Submit</button>
+    </form>
+    <h2>Function B: uppercaseFirstandLast</h2>
+    <form action="/uppercasefirstandlast" method="POST">
+      <label for="string">Enter a string</label>
+      <input type="text" id="string" name="string" required />
+      <button type="submit" onclick="uppercaseFirstandLast()">Submit</button>
+    </form>
+    <h2>Function C: findAverageAndMedian</h2>
+    <form action="/findaverageandmedian" method="POST">
+      <label for="numbers">Enter set of numbers separated by a comma</label>
+      <input type="text" id="numbers" name="numbers" required />
+      <button type="submit" onclick="findAverageAndMedian()">Submit</button>
+    </form>
+    <h2>Function D: find4Digits</h2>
+    <form action="/find4digits" method="POST">
+      <label for="numbers">Enter a set of numbers separated by spaces</label>
+      <input type="text" id="str" name="str" required />
+      <button type="submit" onclick="find4Digits()">Submit</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "exercise2",
+  "version": "1.0.0",
+  "description": "To track number of visits",
+  "main": "numOfVisits.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brian Ly",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.19.2",
+    "moment-timezone": "^0.5.45"
+  }
+}
