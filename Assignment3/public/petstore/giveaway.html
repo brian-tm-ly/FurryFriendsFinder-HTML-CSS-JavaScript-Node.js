@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Have a pet to give away</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+    <style>
+      h2 {
+        margin-left: 10px;
+        margin-bottom: 0px;
+      }
+
+      p {
+        text-align: justify;
+        font-size: 14px;
+        margin-left: 10px;
+        margin-right: 40px;
+      }
+      fieldset {
+        display: block;
+        margin-left: 20px;
+        width: 80%;
+        padding: 10px;
+        border: solid 2px rgb(2, 117, 2);
+        border-radius: 20px;
+        background-color: rgb(255, 223, 212);
+      }
+      form {
+        margin-left: 10px;
+      }
+      input {
+        margin-top: 3px;
+        margin-bottom: 10px;
+        padding: 5px;
+        border: solid 1px rgb(2, 117, 2);
+      }
+      #email {
+        margin-bottom: -20px;
+      }
+      label {
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .friends {
+        font-size: 14px;
+        font-weight: normal;
+        color: rgb(2, 117, 2);
+      }
+      .gender {
+        font-size: 14px;
+        font-weight: normal;
+        color: rgb(2, 117, 2);
+      }
+      textarea {
+        margin-top: 0px;
+        margin-bottom: 10px;
+        padding: 5px;
+        border: solid 1px rgb(2, 117, 2);
+        width: 500px;
+        height: 75px;
+      }
+      select {
+        margin-top: 5px;
+        margin-bottom: 10px;
+        padding: 5px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        border-radius: 5px;
+        border: solid 2px rgb(2, 117, 2);
+      }
+    </style>
+    <script src="petstore.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <h1 class="sitename">Furry Friend Finder</h1>
+    </div>
+    <a href="index.html" class="logolink">
+      <img src="petlogo.png" alt="logo" class="logo" />
+    </a>
+    <div id="date"></div>
+    <div class="side">
+      <table class="nav">
+        <tr>
+          <td><a href="index.html">Home</a></td>
+        </tr>
+        <tr>
+          <td><a href="createaccount.html">Create an Account</a></td>
+        </tr>
+        <tr>
+          <td><a href="findapet.html">Find A Dog/Cat</a></td>
+        </tr>
+        <tr>
+          <td><a href="petcare.html">Pet Care</a></td>
+        </tr>
+        <tr>
+          <td><a href="giveaway.html">Have A Pet To Give Away?</a></td>
+        </tr>
+        <tr>
+          <td><a href="/logout">Log Out</a></td>
+        </tr>
+        <tr>
+          <td><a href="contact.html">Contact Me</a></td>
+        </tr>
+      </table>
+    </div>
+    <div class="content">
+      <h2>Have a pet to give away?</h2>
+      <p>
+        If you have a pet that you need to give away, please fill out the form
+        below. We will contact you as soon as possible to help you find a new
+        home for your pet.
+      </p>
+      <fieldset>
+        <form
+          id="giveawayform"
+          action="/submitgiveaway"
+          onsubmit="return validateGiveForm()"
+          method="post"
+        >
+          <label for="pettype">Pet Type:</label>
+          <select name="pettype" id="pettype">
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+          </select>
+          <br />
+          <label for="breed">Breed of cat or dog (can be mixed):</label>
+          <input type="text" id="breed" name="breed" />
+          <br />
+          <label for="age">Age of animal:</label><br />
+          <select name="age" id="age">
+            <option value="0-2">0-2</option>
+            <option value="3-5">3-5</option>
+            <option value="6-9">6-9</option>
+            <option value="10+">10+</option>
+          </select>
+          <br />
+          <label>Gender:</label>
+          <input type="radio" name="gender" class="gender" value="Male" />
+          <label class="gender">Male</label>
+          <input type="radio" name="gender" class="gender" value="Female" />
+          <label class="gender">Female</label><br />
+          <label>Who is the pet suitable with? Select all that apply:</label>
+          <br />
+          <input
+            type="checkbox"
+            name="behavior"
+            value="children"
+            id="children"
+          />
+          <label for="children" class="friends">Small children</label>
+          <input
+            type="checkbox"
+            name="behavior"
+            value="otherdogs"
+            id="otherdogs"
+          />
+          <label for="otherdogs" class="friends">Other Dogs</label>
+          <input
+            type="checkbox"
+            name="behavior"
+            value="othercats"
+            id="othercats"
+          />
+          <label for="othercats" class="friends">Other Cats</label>
+          <br />
+          <label for="description">Description:</label><br />
+          <textarea
+            id="description"
+            name="description"
+            placeholder="Brag about your pet!"
+          ></textarea
+          ><br />
+          <label>Current Owner's Name:</label><br />
+          <input
+            type="text"
+            id="firstname"
+            name="ownerFN"
+            placeholder="First name"
+            style="margin-right: 10px"
+          />
+          <input
+            type="text"
+            id="lastname"
+            name="ownerLN"
+            placeholder="Last name"
+          /><br />
+          <label for="email">Current Owner's Email:</label><br />
+          <input type="text" id="email" name="email" /><br />
+          <input type="submit" value="Submit" />
+          <input type="reset" value="Clear" />
+        </form>
+      </fieldset>
+    </div>
+    <div class="footer">
+      <a href="contact.html#bottom" class="privacy">Privacy/Disclaimer</a>
+    </div>
+  </body>
+</html>

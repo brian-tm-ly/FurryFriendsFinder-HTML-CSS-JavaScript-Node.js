@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+    <style>
+      form {
+        margin-left: 10px;
+      }
+      h2 {
+        margin-top: 80px;
+        margin-left: 10px;
+      }
+      label {
+        font-size: 16px;
+        font-weight: bold;
+      }
+      input {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 5px;
+        border: solid 1px rgb(2, 117, 2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1 class="sitename">Furry Friend Finder</h1>
+    </div>
+    <a href="index.html" class="logolink">
+      <img src="petlogo.png" alt="logo" class="logo" />
+    </a>
+    <div id="date"></div>
+    <div class="side">
+      <table class="nav">
+        <tr>
+          <td><a href="index.html">Home</a></td>
+        </tr>
+        <tr>
+          <td><a href="createaccount.html">Create an Account</a></td>
+        </tr>
+        <tr>
+          <td><a href="findapet.html">Find A Dog/Cat</a></td>
+        </tr>
+        <tr>
+          <td><a href="petcare.html">Pet Care</a></td>
+        </tr>
+        <tr>
+          <td><a href="/giveaway">Have A Pet To Give Away?</a></td>
+        </tr>
+        <tr>
+          <td><a href="/logout">Log Out</a></td>
+        </tr>
+        <tr>
+          <td><a href="contact.html">Contact Me</a></td>
+        </tr>
+      </table>
+    </div>
+    <div class="content">
+      <h2>Login</h2>
+      <form
+        action="/login"
+        id="loginform"
+        onsubmit="validateLogin()"
+        method="POST"
+      >
+        <label for="username"><b>Username:</b></label>
+        <input type="text" id="username" name="username" required /><br />
+        <label for="password"><b>Password:</b></label>
+        <input type="password" id="password" name="password" required /><br />
+        <input type="submit" value="Login" />
+      </form>
+    </div>
+    <!-- <script>
+      //Get form element
+      const loginForm = document.getElementById("loginform");
+
+      //Add event listener to form submit event
+      loginForm.addEventListener("submit", (event) => {
+        //Prevent form submission
+        event.preventDefault();
+
+        //Get username and password values from the form
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const data = { username, password };
+
+        //Send fetch request to login rout
+        fetch("/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((response) => {
+            if (response.redirected) {
+              // If the response was a redirect, manually redirect
+              window.location.href = response.url;
+            } else {
+              // Otherwise, try to read the response as JSON
+              return response.json();
+            }
+          })
+          .then((data) => {
+            if (data.success) {
+              alert("Login successful");
+              window.location.href = "/giveaway";
+            } else {
+              alert("Login failed. Please try again");
+            }
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      });
+    </script> -->
+  </body>
+</html>
