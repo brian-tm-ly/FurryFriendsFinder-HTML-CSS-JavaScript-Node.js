@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create an Account</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+    <script src="petstore.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <h1 class="sitename">Furry Friend Finder</h1>
+    </div>
+    <a href="index.html" class="logolink">
+      <img src="petlogo.png" alt="logo" class="logo" />
+    </a>
+    <div id="date"></div>
+    <div class="side">
+      <table class="nav">
+        <tr>
+          <td><a href="index.html">Home</a></td>
+        </tr>
+        <tr>
+          <td><a href="createaccount.html">Create an Account</a></td>
+        </tr>
+        <tr>
+          <td><a href="findapet.html">Find A Dog/Cat</a></td>
+        </tr>
+        <tr>
+          <td><a href="petcare.html">Pet Care</a></td>
+        </tr>
+        <tr>
+          <td><a href="/giveaway">Have A Pet To Give Away?</a></td>
+        </tr>
+        <tr>
+          <td><a href="/logout">Log Out</a></td>
+        </tr>
+        <tr>
+          <td><a href="contact.html">Contact Me</a></td>
+        </tr>
+      </table>
+    </div>
+    <div class="content">
+      <h2>Create an Account</h2>
+      <form
+        action="/createaccount"
+        onsubmit="validateAccountCreation()"
+        method="POST"
+      >
+        <label for="username"
+          ><b>Username</b> (only letters and digits allowed):</label
+        >
+        <input type="text" id="username" name="username" required /><br />
+        <label for="password"
+          ><b>Password</b> (at least 4 characters long, must contain at least 1
+          letter and 1 digit):</label
+        >
+        <input type="password" id="password" name="password" required /><br />
+        <input type="submit" value="Create Account" />
+      </form>
+    </div>
+  </body>
+</html>

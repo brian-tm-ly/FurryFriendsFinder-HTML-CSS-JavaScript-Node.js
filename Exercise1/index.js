@@ -1,3 +1,8 @@
+//Before running the code, run the following command to install the required packages
+//npm install express
+//npm install body-parser
+//Add "type": "module" to package.json to enable ES6 module syntax
+
 import express from "express";
 import bodyParser from "body-parser";
 import { dirname } from "path"; //import dirname from path module
@@ -8,6 +13,7 @@ const port = 3000;
 //get the directory name of the current module
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+//set up middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //Question 1

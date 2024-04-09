@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find a dog/cat</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+    <style>
+      fieldset {
+        display: block;
+        margin-left: 250px;
+        position: relative;
+        width: 50%;
+        padding: 30px;
+        border: solid 2px rgb(2, 117, 2);
+        border-radius: 20px;
+        background-color: rgb(255, 223, 212);
+      }
+      h3 {
+        text-align: center;
+        font-style: italic;
+        margin-top: 40px;
+      }
+      legend {
+        font-size: 26px;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-weight: bold;
+        color: rgb(2, 117, 2);
+      }
+      form {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      .friends {
+        font-size: 16px;
+        font-weight: normal;
+        color: rgb(2, 117, 2);
+      }
+      .gender {
+        font-size: 14px;
+        font-weight: normal;
+        color: rgb(2, 117, 2);
+      }
+      select {
+        margin-bottom: 20px;
+        padding: 5px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        border-radius: 5px;
+        border: solid 2px rgb(2, 117, 2);
+      }
+      option {
+        padding: 5px;
+      }
+      input {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 5px;
+        border: solid 1px rgb(2, 117, 2);
+      }
+      label {
+        font-size: 20px;
+        font-weight: bold;
+        color: rgb(2, 117, 2);
+      }
+    </style>
+    <script src="petstore.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <h1 class="sitename">Furry Friend Finder</h1>
+    </div>
+    <a href="index.html" class="logolink">
+      <img src="petlogo.png" alt="logo" class="logo" />
+    </a>
+    <div id="date"></div>
+    <div class="side">
+      <table class="nav">
+        <tr>
+          <td><a href="home.html">Home</a></td>
+        </tr>
+        <tr>
+          <td><a href="createaccount.html">Create an Account</a></td>
+        </tr>
+        <tr>
+          <td><a href="findapet.html">Find A Dog/Cat</a></td>
+        </tr>
+        <tr>
+          <td><a href="petcare.html">Pet Care</a></td>
+        </tr>
+        <tr>
+          <td><a href="/giveaway">Have A Pet To Give Away?</a></td>
+        </tr>
+        <tr>
+          <td><a href="/logout">Log Out</a></td>
+        </tr>
+        <tr>
+          <td><a href="contact.html">Contact Me</a></td>
+        </tr>
+      </table>
+    </div>
+    <div class="content">
+      <h3>Fill out this form to help us find you your furry friend!</h3>
+      <fieldset>
+        <legend>Find a dog/cat</legend>
+        <form
+          id="findform"
+          action="/findapet"
+          onsubmit="return validateFindForm()"
+          method="post"
+        >
+          <label for="pettype">Pet Type:</label>
+          <select name="pettype" id="pettype">
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+          </select>
+          <br />
+          <label for="breed">Preferred Breed:</label>
+          <input type="text" name="breed" id="breed" />
+          <br />
+          <label for="age">Age of animal:</label><br /><br />
+          <select name="age" id="age">
+            <option value="0-2">0-2</option>
+            <option value="3-5">3-5</option>
+            <option value="6-9">6-9</option>
+            <option value="10+">10+</option>
+          </select>
+          <br />
+          <label>Preferred Gender:</label>
+          <input type="radio" name="gender" class="gender" value="Male" />
+          <label class="gender">Male</label>
+          <input type="radio" name="gender" class="gender" value="Female" />
+          <label class="gender">Female</label>
+          <input
+            type="radio"
+            name="gender"
+            class="gender"
+            value="No preference"
+          />
+          <label class="gender">No preference</label>
+          <br /><br />
+          <label
+            >Who should the pet get along well with? Select all that
+            apply:</label
+          >
+          <br />
+          <input
+            type="checkbox"
+            name="behavior"
+            value="children"
+            id="children"
+          />
+          <label for="children" class="friends">Small children</label>
+          <input
+            type="checkbox"
+            name="behavior"
+            value="otherdogs"
+            id="otherdogs"
+          />
+          <label for="otherdogs" class="friends">Other Dogs</label>
+          <input
+            type="checkbox"
+            name="behavior"
+            value="othercats"
+            id="othercats"
+          />
+          <label for="othercats" class="friends">Other Cats</label>
+          <br />
+          <input type="submit" value="Submit" />
+          <input type="reset" value="Clear" />
+        </form>
+      </fieldset>
+    </div>
+    <div class="footer">
+      <a href="contact.html#bottom" class="privacy">Privacy/Disclaimer</a>
+    </div>
+  </body>
+</html>
