@@ -218,6 +218,7 @@ app.use(
     secret: "secret-key",
     resave: false,
     saveUninitialized: true,
+    cookie: { maxAge: 30 * 60 * 1000 }, //Set cookie expiration time to 30 minutes
   })
 );
 
