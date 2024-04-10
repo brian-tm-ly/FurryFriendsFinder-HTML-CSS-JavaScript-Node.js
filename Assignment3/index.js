@@ -329,12 +329,17 @@ app.post("/findapet", (req, res) => {
       return { type, breed, age, gender, behavior };
     })
     .filter((animal) => {
+      let animalBehaviors = null;
+      if (animal.behavior && typeof animal.behavior === "string") {
+        animalBehaviors = animal.behavior.split(",");
+      }
       return (
         (!pettype || animal.type === pettype) &&
         (!breed || animal.breed.toLowerCase() === breed.toLowerCase()) &&
         (!age || animal.age === age) &&
         (!gender || animal.gender.toLowerCase() === gender.toLowerCase()) &&
-        (!behavior || animal.behavior.toLowerCase() === behavior.toLowerCase())
+        (!behavior ||
+          behavior.every((b) => animalBehaviors.includes(b.toLowerCase())))
       );
     });
 

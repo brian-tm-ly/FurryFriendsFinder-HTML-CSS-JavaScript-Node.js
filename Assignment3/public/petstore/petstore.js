@@ -153,7 +153,7 @@ function validateGiveForm() {
         alert("Please select a gender");
         return false;
         //Check if description field is filled out
-      } else if (description.value.trim() != "") {
+      } else if (description.value.trim() === "") {
         alert("Please fill out the description.");
         return false;
         //Check if owner first name or last name field is filled out with incorrect format
