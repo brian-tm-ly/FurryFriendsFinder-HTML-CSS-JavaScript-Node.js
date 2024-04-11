@@ -1,6 +1,5 @@
 //Before running the code, run the following command to install the required packages
-//npm install express
-//npm install body-parser
+//npm install to install all dependecies
 //Add "type": "module" to package.json to enable ES6 module syntax
 
 import express from "express";
