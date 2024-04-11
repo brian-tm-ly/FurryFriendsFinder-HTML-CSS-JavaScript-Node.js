@@ -140,7 +140,7 @@ app.use((req, res, next) => {
   //Set the cookie to the new value and set the expiration date to 1 day
   res.cookie(cookieName, visits, {
     httpOnly: true,
-    expires: new Date(Date.now() + 1 * 24 * 60 * 60 * 1000),
+    expires: new Date(Date.now() + 60 * 60 * 1000), //Set expiration time to 1 hour
   });
   //Store the number of visits in the request object
   req.visits = visits;
@@ -347,18 +347,27 @@ app.post("/findapet", (req, res) => {
         breed,
         age,
         gender,
-        behavior,
+        animalBehavior, //Renamed to animalBehavior to avoid confusion with behavior variable
         description,
         ownerFN,
         ownerLN,
         email,
       ] = line.split(":");
-      return { type, breed, age, gender, behavior };
+      return { type, breed, age, gender, behavior: animalBehavior };
     })
     .filter((animal) => {
+      //Create an array of behaviors for each animal and convert to lowercase
       let animalBehaviors = null;
       if (animal.behavior && typeof animal.behavior === "string") {
-        animalBehaviors = animal.behavior.split(",");
+        animalBehaviors = animal.behavior
+          .split(",")
+          .map((b) => b.toLowerCase());
+      }
+      let behaviors = behavior;
+      if (typeof behavior === "string") {
+        behaviors = [behavior.toLowerCase()];
+      } else if (Array.isArray(behavior)) {
+        behaviors = behavior.map((b) => b.toLowerCase());
       }
       return (
         (!pettype || animal.type === pettype) &&
@@ -366,7 +375,8 @@ app.post("/findapet", (req, res) => {
         (!age || animal.age === age) &&
         (!gender || animal.gender.toLowerCase() === gender.toLowerCase()) &&
         (!behavior ||
-          behavior.every((b) => animalBehaviors.includes(b.toLowerCase())))
+          (Array.isArray(behaviors) &&
+            behaviors.every((b) => animalBehaviors.includes(b.toLowerCase()))))
       );
     });
 

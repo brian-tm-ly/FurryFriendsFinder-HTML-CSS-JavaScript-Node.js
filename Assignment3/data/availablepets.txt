@@ -1,3 +1,2 @@
-1:dog:samoyed:0-2:Male:children:cool:Brian:Ly:ly.brian@hotmail.ca
-2:dog:corgi:0-2:Female:otherdogs,othercats:she's awesome:test:test1:test.test@test.com
-3:dog:corgi:3-5:Male:children,otherdogs,othercats:hes great:Brian:Ly:ly.brian@hotmail.ca
+1:dog:Samoyed:0-2:Male:SmallChildren,OtherCats:hes cool:Brian:Ly:test.test@test.com
+2:dog:corgi:3-5:Female:OtherDogs:she's nice:Brian:test1:test.test@test.com
