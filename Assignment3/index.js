@@ -18,7 +18,7 @@ import { fileURLToPath } from "url"; //import fileURLToPath from url module
 const app = express();
 const port = 3000;
 //get the directory name of the current module
-let __dirname = dirname(fileURLToPath(import.meta.url));
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 //set up middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -197,9 +197,6 @@ app.post("/submitex3", (req, res) => {
 
 //Exercise 4
 
-//Path to petstore directory
-const petstoreDir = path.join(__dirname, "public/petstore");
-
 //Path to data directory
 const dataDir = path.join(__dirname, "data");
 
@@ -225,9 +222,39 @@ app.use(
 //Serve static files from public directory
 app.use(express.static(path.join(__dirname, "public/petstore")));
 
-//Route to get giveaway page
+//Set EJS as the view engine
+app.set("view engine", "ejs");
+
+//Set the views directory
+app.set("views", path.join(__dirname, "views"));
+
+app.get("/index", (req, res) => {
+  res.render("partials/index");
+});
+
+app.get("/createaccount", (req, res) => {
+  res.render("partials/createaccount");
+});
+
+app.get("/findapet", (req, res) => {
+  res.render("partials/findapet");
+});
+
+app.get("/petcare", (req, res) => {
+  res.render("partials/petcare");
+});
+
+//Route to give away form, requires login
 app.get("/giveaway", requireLogin, (req, res) => {
-  res.sendFile(path.join(__dirname, "public/petstore", "giveaway.html"));
+  res.render("partials/giveaway");
+});
+
+app.get("/login", (req, res) => {
+  res.render("partials/login");
+});
+
+app.get("/contact", (req, res) => {
+  res.render("partials/contact");
 });
 
 //Post request to create account
@@ -362,7 +389,7 @@ app.get("/logout", (req, res) => {
     if (err) {
       console.error("Error destroying session:", err);
     }
-    res.redirect("/index.html"); // Redirect to petstore homepage after logout
+    res.redirect("/index"); // Redirect to petstore homepage after logout
   });
 });
 
@@ -437,7 +464,7 @@ function requireLogin(req, res, next) {
     next();
   } else {
     //Redirect to login page if not logged in
-    res.redirect("/login.html");
+    res.redirect("/login");
   }
 }
 

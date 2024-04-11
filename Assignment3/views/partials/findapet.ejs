@@ -1,0 +1,90 @@
+<%- include('header') %>
+<main>
+  <div class="side">
+    <table class="nav">
+      <tr>
+        <td><a href="/home">Home</a></td>
+      </tr>
+      <tr>
+        <td><a href="/createaccount">Create an Account</a></td>
+      </tr>
+      <tr>
+        <td><a href="/findapet">Find A Dog/Cat</a></td>
+      </tr>
+      <tr>
+        <td><a href="/petcare">Pet Care</a></td>
+      </tr>
+      <tr>
+        <td><a href="/giveaway">Have A Pet To Give Away?</a></td>
+      </tr>
+      <tr>
+        <td><a href="/logout">Log Out</a></td>
+      </tr>
+      <tr>
+        <td><a href="/contact">Contact Me</a></td>
+      </tr>
+    </table>
+  </div>
+  <div class="content">
+    <h3 id="findapeth3">
+      Fill out this form to help us find you your furry friend!
+    </h3>
+    <fieldset class="findapet">
+      <legend>Find a dog/cat</legend>
+      <form
+        id="findform"
+        action="/findapet"
+        onsubmit="return validateFindForm()"
+        method="post"
+      >
+        <label for="pettype">Pet Type:</label>
+        <select name="pettype" id="pettype">
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+        </select>
+        <br />
+        <label for="breed">Preferred Breed:</label>
+        <input type="text" name="breed" id="breed" />
+        <br />
+        <label for="age">Age of animal:</label><br /><br />
+        <select name="age" id="age">
+          <option value="0-2">0-2</option>
+          <option value="3-5">3-5</option>
+          <option value="6-9">6-9</option>
+          <option value="10+">10+</option>
+        </select>
+        <br />
+        <label>Preferred Gender:</label>
+        <input type="radio" name="gender" class="gender" value="Male" />
+        <label class="gender">Male</label>
+        <input type="radio" name="gender" class="gender" value="Female" />
+        <label class="gender">Female</label>
+        <br /><br />
+        <label
+          >Who should the pet get along well with? Select all that apply:</label
+        >
+        <br />
+        <input type="checkbox" name="behavior" value="children" id="children" />
+        <label for="children" class="friends">Small children</label>
+        <input
+          type="checkbox"
+          name="behavior"
+          value="otherdogs"
+          id="otherdogs"
+        />
+        <label for="otherdogs" class="friends">Other Dogs</label>
+        <input
+          type="checkbox"
+          name="behavior"
+          value="othercats"
+          id="othercats"
+        />
+        <label for="othercats" class="friends">Other Cats</label>
+        <br />
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Clear" />
+      </form>
+    </fieldset>
+  </div>
+</main>
+<%- include('footer') %>

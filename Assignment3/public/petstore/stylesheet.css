@@ -40,7 +40,7 @@
 }
 .side {
   position: fixed;
-  margin-top: 70px;
+  margin-top: 0px;
   margin-left: 8px;
   padding-left: 0px;
   border: 5px solid rgb(2, 117, 2);
@@ -121,4 +121,170 @@ input[type="submit"]:hover {
 input[type="reset"]:hover {
   background-color: rgb(255, 0, 0);
   color: white;
+}
+
+/* Style for home page */
+.puppies {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  border: solid 5px rgb(2, 93, 2);
+  border-radius: 20px;
+}
+
+#homeh {
+  padding-top: 10px;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.intro {
+  text-align: justify;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-bottom: 20px;
+}
+
+/* style for findapet form */
+.findapet {
+  display: block;
+  margin-left: 250px;
+  position: relative;
+  width: 50%;
+  padding: 30px;
+  border: solid 2px rgb(2, 117, 2);
+  border-radius: 20px;
+  background-color: rgb(255, 223, 212);
+}
+#findapeth3 {
+  text-align: center;
+  font-style: italic;
+  margin-top: 40px;
+}
+legend {
+  font-size: 26px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+  color: rgb(2, 117, 2);
+}
+#findform {
+  font-family: Verdana, Tahoma, sans-serif;
+}
+
+.friends {
+  font-size: 16px;
+  font-weight: normal;
+  color: rgb(2, 117, 2);
+}
+.gender {
+  font-size: 14px;
+  font-weight: normal;
+  color: rgb(2, 117, 2);
+}
+select {
+  margin-bottom: 20px;
+  padding: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  border-radius: 5px;
+  border: solid 2px rgb(2, 117, 2);
+}
+option {
+  padding: 5px;
+}
+input {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 5px;
+  border: solid 1px rgb(2, 117, 2);
+}
+label {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(2, 117, 2);
+}
+
+/* style for giveaway form */
+#giveawayfield {
+  border: none;
+}
+
+#giveawayform {
+  display: block;
+  margin-left: 20px;
+  width: 80%;
+  padding: 10px;
+  border: solid 2px rgb(2, 117, 2);
+  border-radius: 20px;
+  background-color: rgb(255, 223, 212);
+}
+
+#giveawayp {
+  text-align: justify;
+  font-size: 14px;
+  margin-left: 10px;
+  margin-right: 40px;
+}
+
+#email {
+  margin-bottom: -20px;
+}
+
+textarea {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: solid 1px rgb(2, 117, 2);
+  width: 500px;
+  height: 75px;
+}
+
+/* style for contact page */
+
+#disclaimer {
+  display: table-cell;
+  height: 350px;
+  vertical-align: bottom;
+  color: black;
+  font-style: italic;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 14px;
+}
+
+/* style for petcare */
+
+#petcare {
+  margin-left: 40px;
+}
+
+.care {
+  margin-left: 40px;
+}
+
+.carep {
+  text-align: justify;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+/* style for login */
+#loginform {
+  margin-left: 10px;
+}
+#loginh2 {
+  margin-top: 80px;
+  margin-left: 10px;
+}
+
+#loginform label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#loginform input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: solid 1px rgb(2, 117, 2);
 }
