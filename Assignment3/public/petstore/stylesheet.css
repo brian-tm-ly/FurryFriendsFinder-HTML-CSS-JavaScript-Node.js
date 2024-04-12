@@ -39,17 +39,17 @@
   color: rgb(2, 117, 2);
 }
 .side {
-  position: fixed;
+  position: absolute;
+  height: calc(100vh - 200px);
   margin-top: 0px;
   margin-left: 8px;
   padding-left: 0px;
-  border: 5px solid rgb(2, 117, 2);
+  border: 0px solid rgb(2, 117, 2);
   margin-right: 1200px;
-  background-color: rgb(255, 223, 212);
 }
 
 .footer {
-  position: fixed;
+  position: absolute;
   margin-left: -12px;
   bottom: 0;
   width: 100%;
@@ -66,6 +66,10 @@ a.privacy {
 }
 a.privacy:hover {
   color: rgb(233, 233, 233);
+}
+table {
+  border-collapse: collapse;
+  background-color: rgb(255, 223, 212);
 }
 td {
   border: 3px solid rgb(2, 117, 2);
@@ -93,6 +97,7 @@ a:hover {
 
 .content {
   position: relative;
+  height: calc(100vh - 200px);
   margin-left: 250px;
   margin-top: 80px;
   margin-bottom: 60px;
