@@ -1,6 +1,10 @@
+//Please go to website http://soen287.encs.concordia.ca:5258/ to view the exercises
+
+//If you want to run the code locally, please follow the instructions below:
 //Before running the code, run the following command to install the required packages
-//npm install to install all dependecies
+//In terminal or command prompt, run the command "npm install" to install all dependecies
 //Add "type": "module" to package.json to enable ES6 module syntax
+//Run the following command to start the server: "node index.js"
 
 import express from "express";
 import bodyParser from "body-parser";
@@ -15,7 +19,7 @@ import { fileURLToPath } from "url"; //import fileURLToPath from url module
 //Exercise 1
 
 const app = express();
-const port = 3000;
+const port = 5000;
 //get the directory name of the current module
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
